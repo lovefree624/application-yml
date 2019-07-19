@@ -1,0 +1,86 @@
+server:
+  port: 8773
+
+spring:
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyyMMddHHmmss
+    joda-date-time-format: yyyyMMddHHmmss
+    default-property-inclusion: non_null
+  sleuth:
+    sampler:
+      percentage: 0.01
+    enable: true
+  application:
+    name: zte-interface-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://128.196.233.250:3306/csrcmdb?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false
+    username: report
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+  profiles: dev
+
+####日志文件的位置
+logging:
+  config: classpath:logback-boot.xml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://128.196.233.249:8761/eureka/,http://128.196.233.250:8761/eureka/
+  instance:
+    instance-id: zte-interface-service:8773
+    prefer-ip-address: true
+
+info:
+  app.name: zte-interface-service
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
+mybatis:
+  type-aliases-package: com.zte.inface.cdxc.model
+  mapper-locations: classpath:persist/mapper/*.xml
+
+
+#zte:
+#  inface:
+#    resources:
+#      locations: classpath*:application/spring/all.xml
+#httpClient pool config
+httpclient:
+  pool:
+    maxtotal: 500
+    maxperpoute: 100
+    retrycount: 3
+    retryEnabled: true
+    connecttimeout: 20000
+    readtimeout: 30000
+    requesttimeout: 20000
+    #mysql:
+    #  jdbc:
+    #    driverClass: com.mysql.jdbc.Driver
+    #      jdbcUrl: jdbc:mysql://128.196.233.250:3306/csrcmdb?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false
+    #      user: report
+    #      password: 123456
+
+#oracle:
+#  jdbc:
+#    driverClass: oracle.jdbc.OracleDriver
+#    jdbcUrl: jdbc:oracle:thin:@128.160.96.243:1521:zxin
+#    user: zxdb_kf
+#    password: db10$ZTE
+#  log:
+#    jdbc:
+#      driverClass: oracle.jdbc.OracleDriver
+#      jdbcUrl: jdbc:oracle:thin:@128.160.96.243:1521:zxin
+#      user: zxdb_kf
+#      password: db10$ZTE
+#spring:
+#  datasource:
+#      driver-class-name: oracle.jdbc.driver.OracleDriver
+#      url: jdbc:oracle:thin:@128.160.96.243:1521:zxin
+#      username: zxdb_kf
+#      password: db10$ZTE
+#      type: com.alibaba.druid.pool.DruidDataSource
+
