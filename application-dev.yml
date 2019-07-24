@@ -1,3 +1,6 @@
+pws: 
+  name: pws
+
 
 spring:
   rabbitmq:
