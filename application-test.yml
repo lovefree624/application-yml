@@ -22,16 +22,16 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
 
 ####日志文件的位置
-logging:
-  config: classpath:logback-boot.xml
+#logging:
+#  config: classpath:logback-boot.xml
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://128.160.186.229:8761/eureka/
-  instance:
-    instance-id: zte-interface-service:8773
-    prefer-ip-address: true
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://128.160.186.229:8761/eureka/
+#  instance:
+#    instance-id: zte-interface-service:8773
+#    prefer-ip-address: true 
 
 info:
   app.name: zte-interface-service
