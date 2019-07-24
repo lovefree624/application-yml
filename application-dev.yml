@@ -1,5 +1,5 @@
 pws: 
-  name: pws11WE
+  name: pws11WE1355
 
 feign:
   hystrix:
