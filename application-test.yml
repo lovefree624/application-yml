@@ -1,29 +1,7 @@
-server:
-  port: 8773
 
-spring:
-  profiles: test
-  jackson:
-    time-zone: GMT+8
-    date-format: yyyyMMddHHmmss
-    joda-date-time-format: yyyyMMddHHmmss
-    default-property-inclusion: non_null
-  sleuth:
-    sampler:
-      percentage: 0.01
-    enable: true
-  application:
-    name: zte-interface-service
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://128.196.233.250:3306/csrcmdb?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false
-    username: report
-    password: 123456
-    type: com.alibaba.druid.pool.DruidDataSource
+
 
 ####日志文件的位置
-#logging:
-#  config: classpath:logback-boot.xml
 
 #eureka:
 #  client:
@@ -33,30 +11,11 @@ spring:
 #    instance-id: zte-interface-service:8773
 #    prefer-ip-address: true 
 
-info:
-  app.name: zte-interface-service
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
-
-mybatis:
-  type-aliases-package: com.zte.inface.cdxc.model
-  mapper-locations: classpath:persist/mapper/*.xml
 
 
-#zte:
-#  inface:
-#    resources:
-#      locations: classpath*:application/spring/all.xml
-#httpClient pool config
-httpclient:
-  pool:
-    maxtotal: 500
-    maxperpoute: 100
-    retrycount: 3
-    retryEnabled: true
-    connecttimeout: 20000
-    readtimeout: 30000
-    requesttimeout: 20000
+
+
+
     #mysql:
     #  jdbc:
     #    driverClass: com.mysql.jdbc.Driver

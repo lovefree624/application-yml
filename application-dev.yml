@@ -1,4 +1,9 @@
-pws: 
+info:
+  app.name: zte-interface-service
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
+pws:
   name: pws11WE13423423
 
 feign:
